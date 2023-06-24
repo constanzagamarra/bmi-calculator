@@ -9,6 +9,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class IMCAdultosComponent {
   form!: FormGroup;
   imagenSeleccionada: string | undefined;
+  imc: number=0;
 
   seleccionarImagen(genero: string) {
     this.imagenSeleccionada = genero;
@@ -28,4 +29,17 @@ export class IMCAdultosComponent {
       altura:['', [Validators.required, Validators.pattern("^[1-9][0-9]*$")]]
     });
   }
+
+
+  
+  calcularIMC() {
+    const peso = this.form.get('peso')?.value;
+    const altura = this.form.get('altura')?.value;
+  
+    if (peso && altura) {
+    const alturaMetros = altura / 100;  
+      this.imc = peso / ((alturaMetros * alturaMetros)); 
+    }
+  }
+  
 }
