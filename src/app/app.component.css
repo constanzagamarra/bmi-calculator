@@ -1,6 +1,23 @@
-.container-content{
-    width: 100%;
-	display: flex;
-	max-width: 1100px;
-	margin: auto;
+
+img{
+    cursor:pointer;
 }
+
+h2{
+    cursor:pointer;
+    color: #666666;
+}
+
+mat-icon{
+    cursor:pointer;
+    color: #666666;
+}
+
+button {
+    background-color:rgba(0, 0, 205, 0);
+    border: 2px solid rgba(0, 0, 205, 0);;  
+    color: #666666;
+    font-size:16px;  
+     
+  }
+  

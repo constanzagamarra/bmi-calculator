@@ -4,7 +4,7 @@
     <div class="d-flex align-items-center">
       <img src="../assets/calculadora.png" alt="" width="60" height="60" class="d-inline-block align-text-center" 
       routerLink="/Inicio">
-      <h2 style="margin-left: 15px; margin-bottom: 0;" routerLink="/Inicio">Nutricional calculator</h2>
+      <h2 style="margin-left: 15px; margin-bottom: 0;" routerLink="/Inicio">Nutricional calculators</h2>
     </div>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,9 +13,8 @@
     <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown" style="margin-right: 2cm;">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link active d-flex align-items-center" aria-current="page" href="#">
-            <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
-          </a>
+             <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+          
         </li>
 
         <li class="nav-item dropdown d-flex align-items-center" style="margin-left: 2cm;">
@@ -25,7 +24,7 @@
           <mat-menu #menu="matMenu">
             <button mat-menu-item routerLink="/IMCAdultos">IMC adultos</button>
             <button mat-menu-item routerLink="/IMCNiños">IMC niños</button>
-            <button mat-menu-item routerLink="/Inicio">Peso ideal</button>
+            <button mat-menu-item routerLink="/PesoIdeal">Peso ideal</button>
           </mat-menu>
         </li>
       </ul>
@@ -34,7 +33,7 @@
 </nav>
 
  
-<div class="container-fluid">
+<div class="container-fluid ">
 
   <router-outlet></router-outlet> 
 </div>
