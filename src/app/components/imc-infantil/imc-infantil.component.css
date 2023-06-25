@@ -1,5 +1,5 @@
 .rounded-input {
-    border: none;
+ 
     
     padding: 10px 15px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -21,7 +21,7 @@
 
 p{
     text-align: center;
-    color: #828282;
+    color: #ffffff;
 }
 
 h2{
@@ -29,4 +29,15 @@ h2{
     color: #828282;
     padding-top: 20px;
 
+}
+
+.alert{
+  color: white;
+
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

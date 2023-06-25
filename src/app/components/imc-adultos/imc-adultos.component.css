@@ -8,7 +8,7 @@ h1{
 
 p{
     text-align: center;
-    color: #828282;
+    color: #ffffff;
 }
 
 h2{
@@ -31,4 +31,9 @@ h2{
     transition: all 300ms ease-out;
   }
   
- 
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  

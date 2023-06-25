@@ -7,11 +7,14 @@ import { IMCAdultosComponent } from './components/imc-adultos/imc-adultos.compon
 import { IMCInfantilComponent } from './components/imc-infantil/imc-infantil.component';
 import { HomeComponent } from './components/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PesoIdealComponent } from './components/peso-ideal/peso-ideal.component';
 //Componentes angular material
 import {MatIconModule} from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { PesoIdealComponent } from './components/peso-ideal/peso-ideal.component';
+import {MatTooltipModule} from '@angular/material/tooltip';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +30,8 @@ import { PesoIdealComponent } from './components/peso-ideal/peso-ideal.component
     MatIconModule , 
     MatMenuModule , 
     FormsModule, 
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]

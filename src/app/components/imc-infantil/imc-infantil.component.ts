@@ -8,7 +8,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class IMCInfantilComponent {
   form!: FormGroup;
-  imagenSeleccionada: string | undefined;
+  imagenSeleccionada: string = 'mujer';
   imc: number= 0;
 
   seleccionarImagen(genero: string) {
@@ -23,7 +23,7 @@ export class IMCInfantilComponent {
 
   private buildForm() {
     this.form = this.formBuilder.group({
-      genero: ['', [Validators.required, Validators.pattern("^[1-9][0-9]*$")]],
+    
       edad: ['', [Validators.required, Validators.pattern("^[1-9][0-9]*$")]],
       peso: ['', [Validators.required, Validators.pattern("^[1-9][0-9]*$")]],
       altura:['', [Validators.required, Validators.pattern("^[1-9][0-9]*$")]]
@@ -39,4 +39,27 @@ export class IMCInfantilComponent {
       this.imc = peso / ((alturaMetros * alturaMetros)); 
     }
   }
+
+  calcularColorIMC(imc: number): { color: string, palabra: string } {
+    let color = '';
+    let palabra = '';
+  
+    if (imc < 5) {
+      color = '#70B9DA';
+      palabra = 'Peso bajo';
+    } else if (imc >= 5 && imc <= 85){
+      color = '#72DA70';
+      palabra = 'Peso normal';
+    } else if (imc >= 85 && imc <=95) {
+      color = '#E7AD56';
+      palabra = 'Sobrepeso';
+    } else {
+      color = '#DA7070';
+      palabra = 'Obesidad';
+    }
+  
+    return { color, palabra };
+  }
+  
 }
+

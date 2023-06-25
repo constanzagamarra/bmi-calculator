@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <h1 class="text-center">Calcular IMC adultos</h1>
-    <p class="text-center">Para calcular tu IMC necesitamos que completes las siguientes preguntas</p>
+    <p class="text-center" style="color: #828282;">Para calcular tu IMC necesitamos que completes las siguientes preguntas</p>
   
     <form [formGroup]="form" class="text-center">
       <div class="row align-items-center justify-content-center">
@@ -18,32 +18,39 @@
   
         <div class="col-sm-4">
           <h2>¿Que edad tenes?</h2>
-          <input type="number" class="form-control rounded-input" formControlName="edad">
+          <input type="number" class="form-control rounded-input" formControlName="edad" placeholder="Ingrese edad">
         </div>
       </div>
   
       <div class="row align-items-center justify-content-center">
         <div class="col-sm-4">
           <h2>¿Cuánto pesa?</h2>
-          <input type="number" class="form-control rounded-input" formControlName="peso">
+          <input type="number" class="form-control rounded-input" formControlName="peso" placeholder="Ingrese peso en kg">
         </div>
   
         <div class="col-sm-4">
           <h2>¿Cuánto mide?</h2>
-          <input type="number" class="form-control rounded-input" formControlName="altura">
+          <input type="number" class="form-control rounded-input" formControlName="altura" placeholder="Ingrese altura en cm">
         </div>
       </div>
   
       <div class="row justify-content-center mt-4">
         <div class="col-sm-6">
-            <button type="submit" class="btn btn-primary" (click)="calcularIMC()">Calcular IMC</button>
+            <button type="submit" class="btn btn-primary" (click)="calcularIMC()"
+            [disabled]="!form.valid" 
+            >Calcular IMC</button>
         </div>
       </div>
     </form>
   </div>
   
   <div *ngIf="imc" class="row justify-content-center mt-4">
-    <div class="col-sm-6">
-      <p>Tu IMC es: {{ imc | number:'1.2-2' }}</p>
+    <div class="col-sm-8">
+      <div class="alert alert-primary" [ngStyle]="{ 'background-color': calcularColorIMC(imc).color ,  'border': '1px solid ' + calcularColorIMC(imc).color  }"  role="alert">
+       <p>El IMC es: {{ imc | number:'1.2-2' }} - {{ calcularColorIMC(imc).palabra }} </p> 
+ 
+      </div> 
     </div>
+      
   </div>
+  
